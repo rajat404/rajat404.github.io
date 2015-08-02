@@ -1,0 +1,656 @@
+<!doctype html>
+<html>
+  <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+
+  <title>Rajat Goyal</title>
+  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+
+
+  <style>
+  body, html {
+  padding-top:2.5em;
+  margin:0;
+  background-color:#fafafa;
+}
+
+.note {
+  display:block;
+  position: absolute;
+  top:10px;
+  left:10px;
+
+  font-family: "Open Sans";
+  font-size: 0.6em;
+}
+
+.new {
+  background-color: #81C784;
+
+  border: 1px solid #757575;
+  padding: 1px;
+  border-radius: 4px;
+
+}
+
+/* Header */
+
+header {
+  width:100%;
+  vertical-align: middle;
+  text-align: center;
+
+}
+
+.header-content {
+  display: inline-block;
+}
+
+.pic {
+  margin: 0 auto;
+  margin-top:-2.5em;
+
+  border-radius:10em;
+  height:4em;
+  width:4em;
+
+  border: 2px solid #e0e0e0;
+  transition : all 0.5s linear;
+
+}
+
+@-webkit-keyframes wiggle {
+  0%   {
+    transform: rotate(0deg);
+  }
+  25%  {
+    transform: rotate(-30deg);
+  }
+  50%  {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.pic:hover {
+  /*Webkit fix*/
+  -webkit-transform: translateZ(0);
+
+  cursor:pointer;
+
+  -webkit-animation: wiggle 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.header-text {
+  margin-top:0.5em;
+  margin-left:1em;
+}
+
+header p {
+  text-align:center;
+  font-family: "Merriweather";
+
+  margin:0;
+
+  color: #212121;
+}
+
+.first-name {
+   font-size: 1.05em;
+}
+
+.subtitle {
+  font-family: "Merriweather";
+  padding-top:.3em;
+  font-size:0.55em;
+  font-weight:500;
+  color: #424242;
+}
+
+/* Information */
+
+.paper {
+  margin: 0 auto;
+  margin-bottom:1em;
+
+  background-color:white;
+  width:60%;
+
+  padding:0.5em 0 0.5em 0;
+
+  border-top: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 3px solid #e0e0e0;
+  border-radius:3px;
+}
+
+@media(max-width:992px) {
+  .paper {
+    width:80%;
+  }
+}
+
+/* Content Part */
+
+.content-wrapper {
+  padding-right:7.25%;
+}
+
+.content {
+  display:table;
+  width:100%;
+
+  padding-top:1.5em;
+
+  /*border-top: 1px solid #eeeeee;*/
+}
+
+.content:last-child {
+  margin-bottom: 2em;
+}
+
+body > div > article > div > section:last-child {
+  padding-bottom:1.5em;
+}
+
+.row {
+    display:table-row;
+}
+.row div {
+    display:table-cell;
+}
+
+.content-cat {
+  font-family: "Merriweather";
+  font-variant:small-caps;
+  font-weight:300;
+  letter-spacing: 1px;
+
+  color: #212121;
+
+  font-size:0.975em;
+
+  text-align:center;
+  vertical-align:middle;
+
+  padding-left:6.66%;
+  width:30%;
+}
+
+.content-cat p {
+  font-size:0.55em;
+  font-weight:600;
+
+  margin-bottom:0;
+}
+
+.content-text {
+  border-left:1px solid #e0e0e0;
+  transition: border 0.66s ease-in;
+}
+
+.big-text {
+  vertical-align:top;
+}
+
+.content-text ul {
+  padding:0;
+  margin:0;
+  margin-top:0.15em;
+
+  width:85%;
+  margin-left:1.5em;
+}
+
+.content-text ul:last-child {
+  margin-bottom:0.5em;
+}
+
+.content-text ul li {
+  font-family: "Open Sans";
+  font-size:0.7em;
+
+  display:inline-block;
+
+}
+
+.content-text ul li:first-child {
+  width:35%;
+
+  color: #424242;
+
+  font-weight:600;
+}
+
+.content-text ul li a, div.content-text.work-listing.education-listing > p > strong > a {
+  text-decoration: none;
+  color: #0277bd;
+}
+
+.content-text ul li a:hover {
+  color:#4fc3f7;
+}
+
+.work-listing p {
+  font-family: "Open Sans";
+  font-size:0.7em;
+
+  color: #424242;
+
+  margin-left:2em;
+  margin-top:0.45em;
+  margin-bottom: 0.45em;
+}
+
+.work-listing p[align='right']{
+     position: relative;
+    top: -22px;
+    padding: 0;
+}
+
+div.content-text.work-listing.education-listing > p:nth-child(2) {
+  margin-top:0.25em;
+}
+
+.work-listing .highlight {
+  font-family: "Open Sans";
+  font-size:0.7em;
+  font-weight:400;
+
+  color: #424242;
+
+  margin-left:3.25em;
+  padding-left:0.5em;
+
+  border-left:1px solid #e0e0e0;
+
+}
+
+.education-listing > .heading {
+  font-weight:600;
+
+  margin-top:0.75em;
+  margin-left:2em;
+}
+
+.education-listing > .highlight {
+  margin-left:3.25em;
+}
+
+.highlight {
+  transition: border .33s ease-in;
+}
+
+.profiles-listing ul li, .profiles-listing ul li:first-child {
+  width:32%;
+  font-weight: normal;
+}
+
+.work-content, .education-content {
+  padding-top: .75em;
+}
+
+section.content.education-content > div > div.content-cat {
+  vertical-align: top;
+}
+
+div.content-text.skills-listing > p {
+  font-family: "Open Sans";
+  font-size:0.7em;
+  font-weight:400;
+
+  margin-left: 2em;
+  margin-top: 0.45em;
+  margin-bottom: 0.45em;
+}
+
+div.content-text.skills-listing > p > {
+  color:#212121;
+}
+
+
+  </style>
+
+  <style media="print">
+
+body, html {
+  background-color: white;
+  padding-top: 1.5em;
+}
+
+.paper {
+  width:100%;
+  border: 0;
+
+  padding-top: 0;
+}
+
+header p {
+  font-size: 1.3em;
+}
+
+.subtitle {
+  font-size: 0.7em;
+}
+
+.header-pic {
+  float:left;
+}
+
+.profiles {
+  display:none;
+}
+
+.content {
+  page-break-inside:avoid;
+  page-break-after:auto;
+}
+
+.header-text {
+  float:left;
+  margin-top: -1.6em;
+}
+
+.content-wrapper > .content:first-child {
+  padding-top: 2em;
+}
+
+.content:last-child {
+  padding-bottom: 0;
+}
+
+.content-cat {
+  width:33%;
+  color:black;
+  text-align: left;
+}
+
+.content-cat p {
+  font-size:0.6em;
+  font-weight: 600;
+}
+
+header p, .content-text, .work-listing p, .content-text ul li:first-child, .work-listing .highlight, .content-text.skills-listing > ul > li > .highlight {
+  color:black;
+}
+
+.content-text.skills-listing > ul > li span, .subtitle {
+  color:#212121;
+}
+
+.content-text ul:last-child {
+  margin-bottom: 0.25em;
+}
+
+.content-text ul li:first-child {
+  width:50%;
+}
+
+.profiles-listing ul li:first-child {
+  width:32%;
+}
+
+div.content-text.skills-listing > ul > li {
+  width:33%;
+}
+
+.work-listing p {
+  margin-bottom: 0.1em;
+}
+
+div.content-text.skills-listing > ul > li > p {
+  margin-top: 0.4em;
+  margin-bottom: 0.5em;
+}
+
+div.content-text.skills-listing > ul > li {
+  padding-left: 1.5em;
+}
+
+div.content-text.skills-listing > ul > li:first-child {
+  padding-left: 2em;
+}
+
+.note {
+  display:none;
+}
+
+.content-text:hover {
+  border-left:1px solid #eeeeee;
+}
+
+.content-text ul li a:hover {
+  color:#4fc3f7;
+}
+
+.highlight:hover, .content-text.skills-listing > ul > li > .highlight:hover {
+  border-left:1px solid #eeeeee;
+}
+
+.big-text {
+  padding-top: 0;
+}
+  </style>
+
+  </head>
+  <body>
+
+    <div class="resume-wrapper">
+      <article class="paper">
+          <header>
+            <div class="header-content">
+              <div class="header-text">
+                <p>
+                  Rajat Goyal
+                </p>
+                <!-- <p class="subtitle">CS Grad  •  Pythonista  •  Full Stack Developer  •  FOSS Enthusiast</p> -->
+              </div>
+            </div>
+          </header>
+          <div class="content-wrapper">
+
+            <!-- CONTACT -->
+            <section class="content">
+              <div class="row">
+                <div class="content-cat">
+                 Contact
+                </div>
+                <div class="content-text">
+                    <ul>
+                      <li>Website</li>
+                      <li><a href="http://rajat404.com">http://rajat404.com</a></li>
+                    </ul>
+
+                    <ul>
+                      <li>Email</li>
+                      <li>404rajat[at]gmail[dot]com</li>
+                    </ul>
+
+                </div>
+              </div>
+            </section>
+
+            <!-- LOCATION -->
+
+
+            <!-- LANGUAGE -->
+
+            <!-- PROFILES -->
+              <section class="content profiles">
+                <div class="row">
+                  <div class="content-cat">
+                   Profiles
+                  </div>
+                  <div class="content-text profiles-listing">
+                    <ul>
+                          <li>
+                          <a href="https://twitter.com/rajat404/" target="_blank">
+                                Twitter
+                              </a>
+                          </li>
+                          <li>
+                          <a href="https://github.com/rajat404/" target="_blank">
+                                Github
+                              </a>
+                          </li>
+                          <li>
+                          <a href="https://medium.com/@rajat404/" target="_blank">
+                                Blog
+                              </a>
+                          </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+
+                <section class="content">
+                <div class="row">
+                  <div class="content-cat big-text">
+
+                      Education
+
+
+                  </div>
+                  <div class="content-text work-listing education-listing">
+                        <p class="heading" style="margin-top:1em;">Amity School of Engineering &amp; Technology</p>
+
+                        <p class="highlight">
+                          Bachelor:
+                        <i>Computer Science &amp; Engineering</i>
+                        </p>
+
+                  </div>
+                </div>
+              </section>
+
+
+            <section class="content">
+              <div class="row">
+                <div class="content-cat">
+                  Skills
+                </div>
+                <div class="content-text skills-listing">
+                    <p>
+                        Python, Flask, Django, Django Rest Framework, Pytest,
+                    </p>
+                    <p>
+                        Elasticsearch, Vagrant, Celery, Ansible, Docker
+                    </p>
+                </div>
+              </div>
+            </section>
+
+
+                <section class="content">
+              <div class="row">
+                <div class="content-cat big-text">
+                      Personal Projects
+
+
+                </div>
+                <div class="content-text work-listing education-listing">
+                      <p style="margin-top:2.4em;">
+                          <strong>Projects done for college, personal usage, and/or fun</strong>
+                      </p>
+
+                        <p class="highlight"><b>Flixinator:</b><br>
+                        A movie recommendation desktop app which utilizes user's Facebook data to recommend movies based on user's liking.
+                        <br><b>Stack:</b> Tkinter
+
+                        <p class="highlight"><b>Singularilty:</b>
+                        <a href="https://github.com/rajat404/singularity">https://github.com/rajat404/singularity</a><br>
+                        Remove similar tweets, so that the user doesn't have to go through the same stuff over and over again.
+                        <br><b>Stack:</b> Falcon, AngularJS, MongoDB
+
+                        <p class="highlight"><b>Turbo Installer:</b>
+                        <a href="https://github.com/rajat404/turbo-installer">https://github.com/rajat404/turbo-installer</a><br>
+                        Installs the desired packages, after a fresh installation of the OS (Ubuntu).
+                        <br><b>Stack:</b> Shell Script
+
+                        <p class="highlight"><b>Meetup Attendance:</b>
+                        <a href="https://github.com/rajat404/meetup-attendance">https://github.com/rajat404/meetup-attendance</a><br>
+                        An app to mark attendance of the members of any meetup.com group
+                        <br><b>Stack:</b> Flask-Classy, AngularJS
+
+                        <p class="highlight"><b>Concierge:</b>
+                        <a href="https://github.com/rajat404/concierge">https://github.com/rajat404/concierge</a><br>
+                        Web app to manage conferences/meetups (work in progress)
+                        <br><b>Stack:</b> Django Rest Framework
+
+                </div>
+              </div>
+            </section>
+
+                <section class="content">
+              <div class="row">
+                <div class="content-cat big-text">
+                      Work  Experience
+                </div>
+                <div class="content-text work-listing education-listing">
+                      <p style="margin-top:2.4em;">
+                          <strong>Software Engineer</strong> at <strong><a href="http://www.zopper.com/">Zopper </a></strong>
+                          <p align="right"><i>July '15 - Jan '17</i></p>
+                      </p>
+
+
+                        <p class="highlight"><b>Profit</b><br> A cloud based price data analysis &amp; notification system
+                        <br><b>Stack:</b> AngularJS &amp; Elasticsearch</p>
+                        <p class="highlight"><b>Image Pipeline</b><br> A web-dashboard for verifying the images that were uploaded from android phones.
+                        <br><b>Stack:</b> Falcon, AngularJS, MongoDB</p>
+                        <p class="highlight"><b>Store Search </b><br> Created APIs for searching through the entire store database of Zopper.com for their flagship android app
+                        <br><b>Stack:</b> Falcon &amp; Elasticsearch</p>
+                        <p class="highlight"><b>Stores</b><br> Helped revamp the backend of the system handling all the data &amp; business logic for retailers enrolled on our platform
+                        <br><b>Stack:</b> Django Rest Framework</p>
+                        <p class="highlight"><b>Payments Dashboard</b><br> Created the backend of the dashboard for managing the payments made to sellers from Zopper
+                        <br><b>Stack:</b> Django Rest Framework</p>
+
+
+                      <p style="margin-top:2.4em;">
+                          <strong>Software Engineer</strong> as <strong>Freelancer</strong>
+                          <p align="right"><i>Jan '17 - Present</i></p>
+                      </p>
+
+
+                        <p class="highlight"><b>Notification Engine</b><br> System for showing notifications to users in an existing web application
+                        <br><b>Stack: </b>Django Rest Framework</p>
+                        <p class="highlight"><b>MCQ Application</b><br> Application for creating &amp; attempting MCQs
+                        <br><b>Stack: </b>Django Rest Framework</p>
+                        <p class="highlight"><b>Online Python Interpreter</b><br> Web app to facilitate live code execution environment to users for running python code
+                        <br><b>Stack: </b>Django Rest Framework, Docker</p>
+                        <p class="highlight"><b>IVR Caller</b><br> Application for scheduling &amp; making IVR calls
+                        <br><b>Stack: </b>Django Rest Framework</p>
+
+                </div>
+              </div>
+            </section>
+
+
+
+            <section class="content">
+              <div class="row">
+                <div class="content-cat">
+                  Associations<br>&amp;<br>Activities
+                </div>
+                <div class="content-text skills-listing">
+                    <p>- Vice-President of Amity Linux Club(ALiAS), Amity University: successfully organized &amp; coordinated several events in college</p>
+                    <p>- Volunteer in PyCon India - 2013, 2014, 2015 &amp; 2016</p>
+                    <p>- Have played significant roles in lots of events which include techfests, conferences, unconferences and competitions as participant, organisor, co-ordinator and speaker, both in campus and outside</p>
+                </div>
+              </div>
+            </section>
+             <br><br><center><a href="rajat-resume.pdf" download="rajat-resume.pdf"><button>Download as PDF</button></a></center><br>
+
+        </div>
+
+      </article>
+
+    </div>
+  </body>
+</html>

@@ -562,15 +562,11 @@ div.content-text.skills-listing > ul > li:first-child {
 
 
                         <p class="highlight"><b>Profit</b><br> A cloud based price data analysis &amp; notification system
-                        <br><b>Stack:</b> AngularJS &amp; Elasticsearch</p>
                         <p class="highlight"><b>Image Pipeline</b><br> A web-dashboard for verifying the images that were uploaded from android phones.
-                        <br><b>Stack:</b> Falcon, AngularJS, MongoDB</p>
                         <p class="highlight"><b>Store Search </b><br> Created APIs for searching through the entire store database of Zopper.com for their flagship android app
-                        <br><b>Stack:</b> Falcon &amp; Elasticsearch</p>
                         <p class="highlight"><b>Stores</b><br> Helped revamp the backend of the system handling all the data &amp; business logic for retailers enrolled on our platform
-                        <br><b>Stack:</b> Django Rest Framework</p>
                         <p class="highlight"><b>Payments Dashboard</b><br> Created the backend of the dashboard for managing the payments made to sellers from Zopper
-                        <br><b>Stack:</b> Django Rest Framework</p>
+                        <br><br><b>Stack:</b> Django Rest Framework, AngularJS, MongoDB, Elasticsearch</p>
 
 
                       <p style="margin-top:2.4em;">
@@ -580,30 +576,151 @@ div.content-text.skills-listing > ul > li:first-child {
 
 
                         <p class="highlight"><b>Notification Engine</b><br> System for showing notifications to users in an existing web application
-                        <br><b>Stack: </b>Django Rest Framework</p>
                         <p class="highlight"><b>MCQ Application</b><br> Application for creating &amp; attempting MCQs
-                        <br><b>Stack: </b>Django Rest Framework</p>
                         <p class="highlight"><b>Online Python Interpreter</b><br> Web app to facilitate live code execution environment to users for running python code
-                        <br><b>Stack: </b>Django Rest Framework, Docker</p>
                         <p class="highlight"><b>IVR Caller</b><br> Application for scheduling &amp; making IVR calls
-                        <br><b>Stack: </b>Django Rest Framework</p>
+                        <br><br><b>Stack: </b>Django Rest Framework, Docker</p>
 
+                </div>
+              </div>
+            </section>
 
-                      <p style="margin-top:2.4em;">
-                          <strong>Product Engineer</strong> at <strong>Gojek India</strong>
+                <section class="content">
+              <div class="row">
+                <div class="content-cat big-text">
+                      Work Experience at Gojek
+                </div>
+                <div class="content-text work-listing education-listing">
+								                      <p style="margin-top:2.4em;">
+                          <strong>Product Engineer</strong>
                           <p align="right"><i>Dec '17 - Present</i></p>
                       </p>
 
 
-                        <p class="highlight"><b>Notification Engine</b><br> System for showing notifications to users in an existing web application
-                        <br><b>Stack: </b>Django Rest Framework</p>
-                        <p class="highlight"><b>MCQ Application</b><br> Application for creating &amp; attempting MCQs
-                        <br><b>Stack: </b>Django Rest Framework</p>
-                        <p class="highlight"><b>Online Python Interpreter</b><br> Web app to facilitate live code execution environment to users for running python code
-                        <br><b>Stack: </b>Django Rest Framework, Docker</p>
-                        <p class="highlight"><b>IVR Caller</b><br> Application for scheduling &amp; making IVR calls
-                        <br><b>Stack: </b>Django Rest Framework</p>
 
+<p class="highlight"><b>Beast</b>
+<br> - Tool to push data from Kafka to Google BigQuery
+<br> - 300+ beast workers deployed in production - indispensable in data warehousing pipeline
+<br> - Beast is the best available OSS tool for moving data from Kafka to BigQuery
+</p>
+
+
+<p style="margin-top:2.4em;">
+<strong>Infrastructure Creation & Maintenance</strong>
+</p>
+<p class="highlight">
+<br> - Lead maintainer of all infrastructure owned by Hermes team
+  <br>&ensp; - 25 Kafka Clusters (420 VMs)
+  <br>&ensp; - 50+ Kafka Mirror workers
+  <br>&ensp; - 100+ workloads on Kubernetes clusters
+<br> - Lead maintainer of all Terraform code for all infra owned by the team.
+<br> - Consolidated IAC (infrastructure as code) into a single repository, ensuring no VMs are in snowflake state and makes all infra 100% reproducible - this includes GCPs, VPCs, subnets, cloud routers, VPN tunnels, VPC peering, Kubernetes Clusters and of course VMs.
+<br> - Created and maintained tens of:
+  <br>&ensp; - tunnels b/w Google Cloud Projects
+  <br>&ensp; - kafka mirrormaker instances to bring data to Gojek Kafka
+<br> - Contributed to multiple cookbooks & google-cloud Terraform modules that are used across the org
+<br> - Added a generic CI mechanism to our IAC - the first of its kind, that can maintain all components without needing individual CI jobs for each component.
+</p>
+
+<p style="margin-top:2.4em;">
+<strong>Cost Optimization</strong>
+</p>
+<p class="highlight">
+<br> - Saved the org roughly $383,000/year by deleting VMs - either by cleaning up unused machines, or by moving workloads to kubernetes.
+<br> - Deprecate kafka manager & burrow and replacing them with kafka-minion, saving enormous amount of money in infra costs and improving the UX as well
+<br> - Forked, modified and maintained kafka-minion to use in Gojek.
+<br> - Setup Watchman & Kafka-minion for all our VMs and kafka - reducing MTTD & cost
+<br> - Created new kafka & k8s clusters, and deleted older/under-used/unused ones
+</p>
+
+<p style="margin-top:2.4em;">
+<strong>Migration/Upgrade</strong>
+</p>
+<p class="highlight">
+<br> - Upgraded all kubernetes clusters owned by Hermes team to the latest stable version, without any outages
+<br> - Migrated tens of kafkacars across k8s clusters (within hermes-bus GCP)
+<br> - Migrated, organised, curated & centralized all IAC for all components & GCPs owned by Hermes, which were spread across 4 repositories
+<br> - Upgraded all IAC from Terraform version 0.11 to 0.12. 0.12 had major breaking changes.
+<br> - Migrated several kafka clusters to Kafka 2.0
+<br> - Upgraded all Kafka clusters from 3 or 6 to 12 nodes
+</p>
+
+<p style="margin-top:2.4em;">
+<strong>Monitoring/Alerting</strong>
+</p>
+<p class="highlight">
+<br> - Templatized New relic alerting for Kafkacars
+<br> - Templatized lens alerting for all Hermes alerts
+<br> - Moved monitoring of majority of the infra/components/apps to prometheus
+<br> - Enable Kafka Minion for all Kafka clusters
+<br> - Enable Botkube for all k8s clusters
+</p>
+
+<p style="margin-top:2.4em;">
+<strong>Innovation/New Initiatives</strong>
+</p>
+<p class="highlight">
+<br> <b> Kafka Minion </b>
+  <br>&ensp; - Forked, modified and maintained kafka-minion to use in Gojek.
+  <br>&ensp; - Created associated helm chart as well.
+  <br>&ensp; - Used it to replace kafka manager & burrow across the org, reducing the VM
+count and saving a lot of infrastructure cost
+<br> <b> Watchman </b>
+  <br>&ensp; - Created Watchman - a service to monitor & report all events for VM restarts and related operations of a GCP
+  <br>&ensp; - Informs users via message on slack channel
+<br> <b> Helmfile </b>
+  <br>&ensp; - Introduced Helmfile to simplify kubernetes deployments of various components
+  <br>&ensp; - Emphasized on the GitOps convention and simplified the deployment process
+  <br>&ensp; - Simply adding a text file with handful of environment variables is all it takes to deploy a component
+  <br>&ensp; - Further refactored the pipeline to have a common config file (helmfile) for all kafkacar deployments across all kubernetes clusters.
+<br> <b> Jaeger </b>
+  <br>&ensp; - Sole maintainer of integration & production Jaeger and associated Elasticsearch clusters
+  <br>&ensp; - Helped several services onboard to distributed tracing
+</p>
+
+<p style="margin-top:2.4em;">
+<strong>Audit/Security</strong>
+</p>
+<p class="highlight">
+<br> - Audited, fixed, and made monitoring/alerting uniform across all components owned by Hermes
+<br> - Periodically audited all of Hermes infra - looking for inconsistencies in chef tags, GCP labels, cookbook versions across clusters, target prometheus instances etc
+<br> - Audit & Cleanup of users, service accounts and keys for Hermes GCPs.
+</p>
+
+<p style="margin-top:2.4em;">
+<strong>Non-Tech Contributions</strong>
+</p>
+<p class="highlight">
+<br> - Onboarded new members to Hermes team. Mentored new joinees and shared context
+<br> - Wrote team’s OKRs
+<br> - Handled the majority of project management for the team.
+<br> - Insisted on a high standard of engineering by the team. Led with example, and never compromised on the quality of products we built.
+<br> - Each member of the team became a better engineer while in Hermes Team, due to our high standards, emphasis on following the best practices, promotion of ingenuity and space for experimentation.
+<br> - Gave talks in :
+<br>&ensp;   - Kafka Day Meetup on Beast
+<br>&ensp; - GoConf on Building Scalable Data Pipelines
+</p>
+
+<p style="margin-top:2.4em;">
+<strong>Documentation</strong>
+</p>
+<p class="highlight">
+<br> - Created, curated and organised team’s internal & external wikis
+<br> - Created a documentation driven support mindset among Hermes team members
+<br> - Started Hermes internal blog, and wrote all the posts
+</p>
+
+<p style="margin-top:2.4em;">
+<strong>Gitlab</strong>
+</p>
+<p class="highlight">
+<br> - Managed Gojek’s Gitlab installation.
+<br> - Made it reproducible in case of any disasters
+<br> - Regular upgrades
+<br> - Made the setup HA
+<br> - Enabled object storage for artifacts and builds
+<br> - Reduced disk usage from 25TB to 500GB
+</p>
 
                 </div>
               </div>

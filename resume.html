@@ -534,7 +534,7 @@
               <div class="content-text skills-listing">
                 <p>Python, Ruby, Golang</p>
                 <p>Kafka, Kubernetes, Terraform</p>
-                <p>Google Cloud Platform, AWS (basic)</p>
+                <p>AWS (basic), Google Cloud Platform</p>
               </div>
             </div>
           </section>
@@ -570,11 +570,10 @@
 
                 <p class="highlight">
                   <b>Beast</b> <br />
-                  - Tool to push data from Kafka to Google BigQuery <br />
+                  - Tool to push data from Kafka to Google BigQuery with minimal latency <br />
                   - 300+ beast workers deployed in production - indispensable in
                   data warehousing pipeline <br />
-                  - Beast is the best available OSS tool for moving data from
-                  Kafka to BigQuery
+                  - Open sourced Beast: <a href="https://github.com/gojekfarm/beast">https://github.com/gojekfarm/beast</a>
                 </p>
 
                 <p style="margin-top: 2.4em">
@@ -604,57 +603,10 @@
                 </p>
 
                 <p style="margin-top: 2.4em">
-                  <strong>Cost Optimization</strong>
-                </p>
-                <p class="highlight">
-                  - Saved the org over $350,000/year by deleting VMs - either by
-                  cleaning up unused machines, or by moving workloads to
-                  kubernetes. <br />
-                  - Deprecate kafka manager & burrow and replacing them with
-                  kafka-minion, saving enormous amount of money in infra costs
-                  and improving the UX as well <br />
-                  - Forked, modified and maintained kafka-minion to use in
-                  Gojek. <br />
-                  - Setup Watchman & Kafka-minion for all our VMs and kafka -
-                  reducing MTTD & cost <br />
-                  - Created new kafka & k8s clusters, and deleted
-                  older/under-used/unused ones
-                </p>
-
-                <p style="margin-top: 2.4em">
-                  <strong>Migration/Upgrade</strong>
-                </p>
-                <p class="highlight">
-                  - Upgraded all kubernetes clusters owned by Hermes team to the
-                  latest stable version, without any outages <br />
-                  - Migrated tens of kafkacars across k8s clusters (within
-                  hermes-bus GCP) <br />
-                  - Migrated, organised, curated & centralized all IAC for all
-                  components & GCPs owned by Hermes, which were spread across 4
-                  repositories <br />
-                  - Upgraded all IAC from Terraform version 0.11 to 0.12. 0.12
-                  had major breaking changes. <br />
-                  - Migrated several kafka clusters to Kafka 2.0 <br />
-                  - Upgraded all Kafka clusters from 3 or 6 to 12 nodes
-                </p>
-
-                <p style="margin-top: 2.4em">
-                  <strong>Monitoring/Alerting</strong>
-                </p>
-                <p class="highlight">
-                  - Templatized New relic alerting for Kafkacars <br />
-                  - Templatized lens alerting for all Hermes alerts <br />
-                  - Moved monitoring of majority of the infra/components/apps to
-                  prometheus <br />
-                  - Enable Kafka Minion for all Kafka clusters <br />
-                  - Enable Botkube for all k8s clusters
-                </p>
-
-                <p style="margin-top: 2.4em">
                   <strong>Innovation/New Initiatives</strong>
                 </p>
                 <p class="highlight">
-                  <b> Kafka Minion </b> <br />&ensp; - Forked, modified and
+                  <b> <a href="https://github.com/redpanda-data/kminion">Kafka Minion</a> </b> <br />&ensp; - Forked, modified and
                   maintained kafka-minion to use in Gojek. <br />&ensp; -
                   Created associated helm chart as well. <br />&ensp; - Used it
                   to replace kafka manager & burrow across the org, reducing the
@@ -671,10 +623,37 @@
                   takes to deploy a component <br />&ensp; - Further refactored
                   the pipeline to have a common config file (helmfile) for all
                   kafkacar deployments across all kubernetes clusters. <br />
-                  <b> Jaeger </b> <br />&ensp; - Sole maintainer of integration
-                  & production Jaeger and associated Elasticsearch clusters
+                  <b> Jaeger </b> <br />&ensp; - Sole maintainer of Jaeger and associated Elasticsearch clusters
                   <br />&ensp; - Helped several services onboard to distributed
                   tracing
+                </p>
+
+                <p style="margin-top: 2.4em">
+                  <strong>Migration/Upgrade</strong>
+                </p>
+                <p class="highlight">
+                  - Upgraded all kubernetes clusters owned by Hermes team to the
+                  latest stable version, without any outages <br />
+                  - Migrated tens of kafkacars across k8s clusters (within
+                  hermes-bus GCP) <br />
+                  - Migrated, organised, curated & centralized all IAC for all
+                  components & GCPs owned by Hermes, which were spread across 4
+                  repositories <br />
+                  - Upgraded all IAC Terraform versions <br />
+                  - Migrated several kafka clusters to Kafka 2.0 <br />
+                  - Scaled up all Kafka clusters from 3 or 6 to 12 nodes
+                </p>
+
+                <p style="margin-top: 2.4em">
+                  <strong>Monitoring/Alerting</strong>
+                </p>
+                <p class="highlight">
+                  - Templatized New relic alerting for Kafkacars <br />
+                  - Templatized prometheus alerts for all team's alerts <br />
+                  - Moved monitoring of majority of the infra/components/apps to
+                  prometheus <br />
+                  - Enable Kafka Minion for all Kafka clusters <br />
+                  - Enable <a hre="https://github.com/kubeshop/botkube">Botkube</a> for all k8s clusters
                 </p>
 
                 <p style="margin-top: 2.4em">
@@ -708,6 +687,24 @@
                   experimentation. <br />
                   - Gave talks in : <br />&ensp; - Kafka Day Meetup on Beast
                   <br />&ensp; - GoConf on Building Scalable Data Pipelines
+                </p>
+
+                <p style="margin-top: 2.4em">
+                  <strong>Cost Optimization</strong>
+                </p>
+                <p class="highlight">
+                  - Saved the org over $350,000/year by deleting VMs - either by
+                  cleaning up unused machines, or by moving workloads to
+                  kubernetes. <br />
+                  - Deprecate kafka manager & burrow and replacing them with
+                  kafka-minion, saving enormous amount of money in infra costs
+                  and improving the UX as well <br />
+                  - Forked, modified and maintained kafka-minion to use in
+                  Gojek. <br />
+                  - Setup Watchman & Kafka-minion for all our VMs and kafka -
+                  reducing MTTD & cost <br />
+                  - Created new kafka & k8s clusters, and deleted
+                  older/under-used/unused ones
                 </p>
 
                 <p style="margin-top: 2.4em">

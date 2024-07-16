@@ -584,24 +584,11 @@
                 </p>
                 <br />
                 <p class="highlight">
-                  - Lead maintainer of all infrastructure owned by Hermes team
-                  <br />&ensp; - 25 Kafka Clusters (420 VMs) <br />&ensp; - 50+
+                  - Lead maintainer of all infrastructure/IaC owned by the Kafka team
+                  <br />&ensp; - 25 Kafka Clusters <br />&ensp; - 50+
                   Kafka Mirror workers <br />&ensp; - 100+ workloads on
                   Kubernetes clusters <br />
-                  - Lead maintainer of all Terraform code for all infra owned by
-                  the team. <br />
-                  - Consolidated IAC (infrastructure as code) into a single
-                  repository, ensuring no VMs are in snowflake state and makes
-                  all infra 100% reproducible - this includes GCPs, VPCs,
-                  subnets, cloud routers, VPN tunnels, VPC peering, Kubernetes
-                  Clusters and of course VMs. <br />
-                  - Created and maintained tens of: <br />&ensp; - tunnels b/w
-                  Google Cloud Projects <br />&ensp; - kafka mirrormaker
-                  instances to bring data to Gojek Kafka <br />
-                  - Contributed to multiple cookbooks & google-cloud Terraform
-                  modules that are used across the org <br />
-                  - Added a generic CI mechanism to our IAC - the first of its
-                  kind, that can maintain all components without needing
+                  - Added a generic CI mechanism to our IAC that can maintain all components without needing
                   individual CI jobs for each component.
                 </p>
               </div>
@@ -643,54 +630,14 @@
                 </p>
 
                 <p style="margin-top: 2.4em">
-                  <strong>Migration/Upgrade</strong>
-                </p>
-                <p class="highlight">
-                  - Upgraded all kubernetes clusters owned by Hermes team to the
-                  latest stable version, without any outages <br />
-                  - Migrated tens of kafkacars across k8s clusters (within
-                  hermes-bus GCP) <br />
-                  - Migrated, organised, curated & centralized all IAC for all
-                  components & GCPs owned by Hermes, which were spread across 4
-                  repositories <br />
-                  - Upgraded all IAC Terraform versions <br />
-                  - Migrated several kafka clusters to Kafka 2.0 <br />
-                  - Scaled up all Kafka clusters from 3 or 6 to 12 nodes
-                </p>
-
-                <p style="margin-top: 2.4em">
-                  <strong>Monitoring/Alerting</strong>
-                </p>
-                <p class="highlight">
-                  - Templatized New relic alerting for Kafkacars <br />
-                  - Templatized prometheus alerts for all team's alerts <br />
-                  - Moved monitoring of majority of the infra/components/apps to
-                  prometheus <br />
-                  - Enable Kafka Minion for all Kafka clusters <br />
-                  - Enable
-                  <a hre="https://github.com/kubeshop/botkube">Botkube</a> for
-                  all k8s clusters
-                </p>
-
-                <p style="margin-top: 2.4em">
-                  <strong>Audit/Security</strong>
-                </p>
-                <p class="highlight">
-                  - Audited, fixed, and made monitoring/alerting uniform across
-                  all components owned by Hermes <br />
-                  - Periodically audited all of Hermes infra - looking for
-                  inconsistencies in chef tags, GCP labels, cookbook versions
-                  across clusters, target prometheus instances etc <br />
-                  - Audit & Cleanup of users, service accounts and keys for
-                  Hermes GCPs.
-                </p>
-
-                <p style="margin-top: 2.4em">
                   <strong>Others</strong>
                 </p>
                 <p class="highlight">
                   - Created, curated and organised team’s internal & external
                   wikis <br />
+                  - Enable Kafka Minion and
+                  <a href="https://github.com/kubeshop/botkube">Botkube</a> for
+                  all Kafka & k8s clusters respectively
                 </p>
 
                 <p style="margin-top: 2.4em">
@@ -698,7 +645,6 @@
                 </p>
                 <p class="highlight">
                   - Managed and stabilized Gojek’s Gitlab installation. <br />
-                  - Made it reproducible in case of any disasters <br />
                   - Enabled object storage for artifacts and builds <br />
                   - Reduced disk usage from 25TB to 500GB
                 </p>
